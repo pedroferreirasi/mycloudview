@@ -5,6 +5,6 @@ export const SimplePageRoutes: Routes = [{
     path: '',
     component: SimplePageComponent,
     data: {
-        breadcrumb: "Blank Page"
+        breadcrumb: "Pagina em Branco"
     }
 }];
