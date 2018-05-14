@@ -40,7 +40,7 @@ const MENUITEMS = [
                 icon: 'ti-layout-sidebar-left',
                 children: [
                     {
-                        state: 'alert',
+                        state: 'pesquisa-seriado',
                         name: 'Seriado'
                     },{
                         state: 'alert',
