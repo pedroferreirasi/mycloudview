@@ -31,9 +31,23 @@ export interface Menu {
 
 const MENUITEMS = [
     {
-        label: 'Other',
+        label: 'Multimidia',
         main: [
             {
+                state: 'simple-page',
+                name: 'Cadastro',
+                type: 'sub',
+                icon: 'ti-layout-sidebar-left',
+                children: [
+                    {
+                        state: 'alert',
+                        name: 'Seriado'
+                    },{
+                        state: 'alert',
+                        name: 'Temporada'
+                    }
+                ]
+            },{
                 state: 'simple-page',
                 name: 'Simple Page',
                 type: 'link',
