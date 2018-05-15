@@ -5,7 +5,6 @@ import {RouterModule} from "@angular/router";
 import { SimplePageComponent } from './simple-page.component';
 import {SimplePageRoutes} from "./simple-page.routing";
 import {SharedModule} from "../shared/shared.module";
-import { SeriadoComponent } from "../multimidia/seriado/seriado.component";
 
 @NgModule({
   imports: [
@@ -13,6 +12,6 @@ import { SeriadoComponent } from "../multimidia/seriado/seriado.component";
     RouterModule.forChild(SimplePageRoutes),
     SharedModule
   ],
-  declarations: [SimplePageComponent, SeriadoComponent]
+  declarations: [SimplePageComponent]
 })
 export class SimplePageModule { }
