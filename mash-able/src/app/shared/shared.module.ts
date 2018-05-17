@@ -15,6 +15,7 @@ import {ParentRemoveDirective} from './elements/parent-remove.directive';
 import {SqueezeBoxModule} from 'squeezebox';
 import {PaginationModule} from 'ngx-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SpinnerComponent} from '../spinner/spinner.component';
 import {ModalAnimationComponent} from './modal-animation/modal-animation.component';
 import {ModalBasicComponent} from './modal-basic/modal-basic.component';
 import {ToastyModule} from 'ng2-toasty';
@@ -91,6 +92,7 @@ import {ClickOutsideModule} from 'ng-click-outside';
       CardToggleDirective,
       ParentRemoveDirective,
       CardComponent,
+      SpinnerComponent,
       ModalAnimationComponent,
       ModalBasicComponent,
       DataFilterPipe
@@ -104,6 +106,7 @@ import {ClickOutsideModule} from 'ng-click-outside';
       CardToggleDirective,
       ParentRemoveDirective,
       CardComponent,
+      SpinnerComponent,
       SqueezeBoxModule,
       NgbModule,
       PaginationModule,
