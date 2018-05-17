@@ -18,9 +18,6 @@ export const AppRoutes: Routes = [{
   children: [{
     path: 'error',
     loadChildren: './error/error.module#ErrorModule'
-  },{
-    path: 'landing',
-    loadChildren: './landing/landing.module#LandingModule'
   },]
 }, {
   path: '**',

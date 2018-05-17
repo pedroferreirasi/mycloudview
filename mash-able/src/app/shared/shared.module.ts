@@ -15,10 +15,8 @@ import {ParentRemoveDirective} from './elements/parent-remove.directive';
 import {SqueezeBoxModule} from 'squeezebox';
 import {PaginationModule} from 'ngx-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {SpinnerComponent} from '../spinner/spinner.component';
 import {ModalAnimationComponent} from './modal-animation/modal-animation.component';
 import {ModalBasicComponent} from './modal-basic/modal-basic.component';
-import {ScrollModule} from '../scroll/scroll.module';
 import {ToastyModule} from 'ng2-toasty';
 import {SimpleNotificationsModule} from 'angular2-notifications';
 import {TagInputModule} from 'ngx-chips';
@@ -57,7 +55,6 @@ import {ClickOutsideModule} from 'ng-click-outside';
       NgbModule.forRoot(),
       PaginationModule.forRoot(),
       SqueezeBoxModule,
-      ScrollModule,
       ToastyModule.forRoot(),
       SimpleNotificationsModule.forRoot(),
       TagInputModule,
@@ -94,7 +91,6 @@ import {ClickOutsideModule} from 'ng-click-outside';
       CardToggleDirective,
       ParentRemoveDirective,
       CardComponent,
-      SpinnerComponent,
       ModalAnimationComponent,
       ModalBasicComponent,
       DataFilterPipe
@@ -108,7 +104,6 @@ import {ClickOutsideModule} from 'ng-click-outside';
       CardToggleDirective,
       ParentRemoveDirective,
       CardComponent,
-      SpinnerComponent,
       SqueezeBoxModule,
       NgbModule,
       PaginationModule,
@@ -116,7 +111,6 @@ import {ClickOutsideModule} from 'ng-click-outside';
       ReactiveFormsModule,
       ModalBasicComponent,
       ModalAnimationComponent,
-      ScrollModule,
       ToastyModule,
       SimpleNotificationsModule,
       TagInputModule,
