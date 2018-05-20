@@ -3,8 +3,8 @@ import {DatatableComponent} from "@swimlane/ngx-datatable";
 import { Http, Response } from '@angular/http';
 
 @Component({
-    selector: "pesquisa-seriado",
-    templateUrl: "./seriado.component.html"
+    selector: 'pesquisa-seriado',
+    templateUrl: './seriado.component.html'
 })
 export class SeriadoComponent implements OnInit {
   public data: any;

@@ -34,22 +34,22 @@ const MENUITEMS = [
         label: 'Multimidia',
         main: [
             {
-                state: 'simple-page',
+                state: 'multimidia',
                 name: 'Cadastro',
                 type: 'sub',
-                icon: 'ti-layout-sidebar-left',
+                icon: 'ti-view-list-alt',
                 children: [
                     {
                         state: 'pesquisa-seriado',
                         name: 'Seriado'
                     },{
-                        state: 'alert',
-                        name: 'Temporada'
+                        state: 'pesquisa-torrent',
+                        name: 'Torrent'
                     }
                 ]
             },{
-                state: 'simple-page',
-                name: 'Simple Page',
+                state: 'pesquisa-seriado',
+                name: 'Seriado',
                 type: 'link',
                 icon: 'ti-layout-sidebar-left'
             }

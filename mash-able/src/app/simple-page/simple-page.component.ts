@@ -16,6 +16,7 @@ export class SimplePageComponent implements OnInit {
   public filterQuery: string = "";
   public sortBy: string = "";
   public sortOrder: string = "desc";
+  public teste: string;
 
   constructor(public http: Http) { }
 
