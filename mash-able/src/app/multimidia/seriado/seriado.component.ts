@@ -16,7 +16,7 @@ export class SeriadoComponent implements OnInit {
   constructor(public http: Http) { }
 
   ngOnInit() {
-    this.http.get(`http://192.168.25.9:8080/seriado/`)
+    this.http.get(`http://pedroferreirasi.servehttp.com:8080/seriado/`)
       .subscribe((data)=> {
         this.data = data.json();
       });
