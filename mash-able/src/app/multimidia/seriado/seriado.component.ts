@@ -1,5 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {DatatableComponent} from "@swimlane/ngx-datatable";
+import {Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 @Component({
@@ -17,8 +16,8 @@ export class SeriadoComponent implements OnInit {
 
   ngOnInit() {
     this.http.get(`http://pedroferreirasi.servehttp.com:8080/seriado/`)
-      .subscribe((data)=> {
-        this.data = data.json();
-      });
+    .subscribe((data)=> {
+      this.data = data.json();
+    });
   }
 }
