@@ -10,7 +10,15 @@ export const MULTIMIDIA_ROUTES : Routes = [{
             breadcrumb: 'Cadastro',
             status: false
         },
-        children: [{
+        children: [
+        {
+            path: '',
+            component: PesquisaSeriadoComponent,
+            data: {
+                breadcrumb: 'Pesquisa de Seriado',
+                status: true
+            }            
+        },{
             path: 'pesquisa-seriado',
             component: PesquisaSeriadoComponent,
             data: {

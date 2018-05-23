@@ -9,21 +9,35 @@ import { Seriado } from '../../model/multimidia/seriado.model';
   styleUrls: ['./pesquisaseriado.component.css']
 })
 export class PesquisaSeriadoComponent implements OnInit {
-  public data: Seriado[];
-  public rowsOnPage: number = 10;
-  public filterQuery: string = "";
-  public sortBy: string = "";
-  public sortOrder: string = "desc";
+  
+  public rowsOnPage : number = 10;
+  rows = [];
 
-  rowsFilter = [];
-  tempFilter = [];
+  selected = [];
 
-  constructor(public http: Http) { }
-   
-  ngOnInit() {
-    this.http.get(`http://pedroferreirasi.servehttp.com:8080/seriado/`)
-    .subscribe((data)=> {
-      this.data = data.json();
+  columns: any[] = [];
+
+  constructor() {
+    this.fetch((data) => {
+      this.selected = [data[0]];
+      this.rows = data;
     });
   }
+
+  ngOnInit() {}
+
+  fetch(cb) {
+    const req = new XMLHttpRequest();
+    req.open('GET', `http://pedroferreirasi.servehttp.com:8080/seriado/`);
+
+    req.onload = () => {
+      cb(JSON.parse(req.response));
+    };
+
+    req.send();
+  }
+
+  onSelect({ selected }) { }
+
+  onActivate(event) {}
 }
