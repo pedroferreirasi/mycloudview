@@ -2,8 +2,6 @@ import { Routes } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
-import { TorrentComponent } from './multimidia/torrent/torrent.component';
-import { SeriadoComponent } from './multimidia/seriado/seriado.component';
 
 export const AppRoutes: Routes = [
 {

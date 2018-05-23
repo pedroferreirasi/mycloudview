@@ -4,8 +4,9 @@ import { RouterModule } from "@angular/router";
 
 import { MULTIMIDIA_ROUTES } from './multimidia.routing';
 import { SharedModule } from "../shared/shared.module";
-import { SeriadoComponent } from './seriado/seriado.component';
 import { TorrentComponent } from './torrent/torrent.component';
+import { PesquisaSeriadoComponent } from './pesquisaseriado/pesquisaseriado.component';
+import { CadastroSeriadoComponent } from './cadastroseriado/cadastroseriado.component';
 
 @NgModule({
     imports: [
@@ -13,7 +14,7 @@ import { TorrentComponent } from './torrent/torrent.component';
       RouterModule.forChild(MULTIMIDIA_ROUTES),
       SharedModule
     ],
-    declarations: [SeriadoComponent, TorrentComponent]
+    declarations: [TorrentComponent, PesquisaSeriadoComponent, CadastroSeriadoComponent]
   })
 export class MultimidiaModule {
 

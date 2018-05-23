@@ -1,17 +1,18 @@
 import { Routes } from '@angular/router';
 
-import { SeriadoComponent } from './seriado/seriado.component';
+import { PesquisaSeriadoComponent } from './pesquisaseriado/pesquisaseriado.component';
 import { TorrentComponent } from './torrent/torrent.component';
+import { CadastroSeriadoComponent } from './cadastroseriado/cadastroseriado.component';
 
 export const MULTIMIDIA_ROUTES : Routes = [{
     path: '',
         data: {
-            breadcrumb: 'Multimidia',
+            breadcrumb: 'Cadastro',
             status: false
         },
         children: [{
             path: 'pesquisa-seriado',
-            component: SeriadoComponent,
+            component: PesquisaSeriadoComponent,
             data: {
                 breadcrumb: 'Pesquisa de Seriado',
                 status: true
@@ -21,6 +22,13 @@ export const MULTIMIDIA_ROUTES : Routes = [{
             component: TorrentComponent,
             data: {
                 breadcrumb: 'Pesquisa de Torrent',
+                status: true
+            }
+        },{
+            path: 'cadastro-seriado',
+            component: CadastroSeriadoComponent,
+            data: {
+                breadcrumb: 'Cadastro de Seriado',
                 status: true
             }
         }]
