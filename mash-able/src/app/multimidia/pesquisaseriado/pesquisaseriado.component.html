@@ -13,7 +13,10 @@
                 <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
                     <div>
                         <label class="label-control">Show
-                            <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                            <select class="form-control input-sm full-data-show-entry"                                     
+                                    placeholder="Search name"
+                                    (change)="alterarLimit($event)">
+                                    <!-- [(ngModel)]="rowsOnPage" -->
                                 <option [ngValue]="10">10</option>
                                 <option [ngValue]="25">25</option>
                                 <option [ngValue]="50">50</option>
@@ -26,12 +29,18 @@
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <div style="text-align: right;">
                         <label>Pesquisar:
-                            <input type="search" [(ngModel)]="filterQuery" class="form-control input-sm full-data-search" placeholder="Search name">
+                            <input type="search" 
+                                   class="form-control input-sm full-data-search" 
+                                   placeholder="Search name"
+                                   >
+                                   <!-- [(ngModel)]="rowsOnPage" -->
                         </label>
                     </div>
                 </div>
             </div>
+            {{ rowsOnPage }}
             <ngx-datatable 
+                #table
                 class="data-table" 
                 [rows]="rows" 
                 [columnMode]="'force'" 
