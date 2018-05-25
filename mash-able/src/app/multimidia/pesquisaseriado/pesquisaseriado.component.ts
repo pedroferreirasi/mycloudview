@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
-import {DatatableComponent} from "@swimlane/ngx-datatable";
+import { DatatableComponent } from "@swimlane/ngx-datatable";
 import { Seriado } from '../../model/multimidia/seriado.model';
 
 @Component({
@@ -10,8 +10,12 @@ import { Seriado } from '../../model/multimidia/seriado.model';
   styleUrls: ['./pesquisaseriado.component.css']
 })
 export class PesquisaSeriadoComponent implements OnInit {
-  
-  public rowsOnPage : String = "10";
+
+  public rowsOnPage: number = 10;
+
+  @ViewChild(DatatableComponent) table: DatatableComponent;
+  _limitNumber : number;
+
   rows = [];
   rowsAux = [];
 
@@ -27,7 +31,7 @@ export class PesquisaSeriadoComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   fetch(cb) {
     const req = new XMLHttpRequest();
@@ -38,6 +42,12 @@ export class PesquisaSeriadoComponent implements OnInit {
     };
 
     req.send();
+  }
+
+  alterarLimit(evento: KeyboardEvent) {
+    this.rowsOnPage = parseInt((<HTMLInputElement>evento.target).value);
+    this.table.limit = this.rowsOnPage;
+    this.table.recalculate();
   }
 
   /*updateFilter(event) {
@@ -53,13 +63,6 @@ export class PesquisaSeriadoComponent implements OnInit {
     // Whenever the filter changes, always go back to the first page
     this.table.offset = 0;
   }*/
-
-  alterarLimit(evento : KeyboardEvent) {
-    this.rowsOnPage = (<HTMLInputElement>evento.target).value;    
-    //this.rows = [];
-    //this.rows = this.rowsAux;
-    window.dispatchEvent(new Event('resize'));
-  }
 
   onSelect({ selected }) { }
 
