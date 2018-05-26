@@ -1,56 +1,46 @@
 <div class="row">
     <div class="col-sm-12">
-        <app-card [title]="'Seriados'">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
+        <nav class="navbar navbar-light bg-light">
+            <div class="col-sm-10">
+                <a class="navbar-brand">
                     <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">Novo</button>&nbsp;
                     <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">Editar</button>&nbsp;
                     <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-danger btn-round">Excluir</button>&nbsp;
-                </div>
+                </a>
             </div>
-            <br>
+            <div class="col-sm-2">
+                <label class="label-control">
+                    Qtd. de Registro(s)
+                    <br />
+                    <select class="form-control input-sm full-data-show-entry" placeholder="Search name" (change)="alterarLimit($event)">
+                        <option [ngValue]="10">10</option>
+                        <option [ngValue]="25">25</option>
+                        <option [ngValue]="50">50</option>
+                        <option [ngValue]="100">100</option>
+                    </select>
+                </label>
+            </div>
+        </nav>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-sm-12">
+        <app-card [title]="'Seriados'">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
-                    <div>
-                        <label class="label-control">Exibir
-                            <select class="form-control input-sm full-data-show-entry"                                     
-                                    placeholder="Search name"
-                                    (change)="alterarLimit($event)">
-                                    <!-- [(ngModel)]="rowsOnPage" -->
-                                <option [ngValue]="10">10</option>
-                                <option [ngValue]="25">25</option>
-                                <option [ngValue]="50">50</option>
-                                <option [ngValue]="100">100</option>
-                            </select>
-                            Registro(s)
-                        </label>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div style="text-align: right;">
-                        <label>Pesquisar:
-                            <input type="search" 
-                                   class="form-control input-sm full-data-search" 
-                                   placeholder="Search name"
-                                   >
-                                   <!-- [(ngModel)]="rowsOnPage" -->
-                        </label>
-                    </div>
+                <div class="col-sm-12 ">
+                    <label>Pesquisar:</label>
                 </div>
             </div>
-            <ngx-datatable 
-                #table
-                class="data-table" 
-                [rows]="rows" 
-                [columnMode]="'force'" 
-                [columns]="columns" 
-                [headerHeight]="50" 
-                [footerHeight]="50"
-                [rowHeight]="'auto'" 
-                [limit]="rowsOnPage"
-                [selected]="selected" 
-                [selectionType]="'single'" 
-                (activate)="onActivate($event)"
+            <div class="row">
+                <div class="col-sm-4">
+                    <input type="search" class="form-control input-sm" placeholder="Pesquisar" (keyup)='updateFilter($event)'>
+                    <!-- [(ngModel)]="rowsOnPage" -->
+                </div>
+            </div>
+            <br />
+            <ngx-datatable #table class="data-table" [rows]="rows" [columnMode]="'force'" [columns]="columns" [headerHeight]="50" [footerHeight]="50"
+                [rowHeight]="'auto'" [limit]="rowsOnPage" [selected]="selected" [selectionType]="'single'" (activate)="onActivate($event)"
                 (select)='onSelect($event)'>
 
                 <ngx-datatable-column name="Código" prop="id"></ngx-datatable-column>

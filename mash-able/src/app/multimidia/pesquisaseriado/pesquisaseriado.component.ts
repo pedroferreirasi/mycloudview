@@ -21,11 +21,14 @@ export class PesquisaSeriadoComponent implements OnInit {
 
   selected = [];
 
+  temp = [];
+
   columns: any[] = [];
 
   constructor() {
     this.fetch((data) => {
       this.selected = [data[0]];
+      this.temp = [...data];
       this.rows = data;
       this.rowsAux = data;
     });
@@ -50,19 +53,19 @@ export class PesquisaSeriadoComponent implements OnInit {
     this.table.recalculate();
   }
 
-  /*updateFilter(event) {
+  updateFilter(event) {
     const val = event.target.value.toLowerCase();
 
-    // filter our data
-    const temp = this.tempFilter.filter(function(d) {
+    // filter our data    
+    const temp = this.temp.filter(function(d) {
       return d.name.toLowerCase().indexOf(val) !== -1 || !val;
     });
 
     // update the rows
-    this.rows = temp;
+    this.table.rows = temp;
     // Whenever the filter changes, always go back to the first page
     this.table.offset = 0;
-  }*/
+  }
 
   onSelect({ selected }) { }
 
