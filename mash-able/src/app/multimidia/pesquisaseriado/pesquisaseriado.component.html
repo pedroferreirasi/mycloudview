@@ -34,13 +34,21 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <input type="search" class="form-control input-sm" placeholder="Pesquisar" (keyup)='updateFilter($event)'>
-                    <!-- [(ngModel)]="rowsOnPage" -->
+                    <input type="search" class="form-control input-sm" placeholder="Pesquisar" (keyup)='filtrar($event)'>
                 </div>
             </div>
             <br />
-            <ngx-datatable #table class="data-table" [rows]="rows" [columnMode]="'force'" [columns]="columns" [headerHeight]="50" [footerHeight]="50"
-                [rowHeight]="'auto'" [limit]="rowsOnPage" [selected]="selected" [selectionType]="'single'" (activate)="onActivate($event)"
+            <ngx-datatable #table 
+                class="data-table" 
+                [rows]="dataSource" 
+                [columnMode]="'force'" 
+                [headerHeight]="50" 
+                [footerHeight]="50"
+                [rowHeight]="'auto'" 
+                [limit]="registrosPorPagina" 
+                [selected]="registroSelecionado" 
+                [selectionType]="'single'" 
+                (activate)="onActivate($event)"
                 (select)='onSelect($event)'>
 
                 <ngx-datatable-column name="Código" prop="id"></ngx-datatable-column>
@@ -50,16 +58,17 @@
 
             </ngx-datatable>
         </app-card>
+
         <div class="row">
             <div class='col-sm-12 selected-column'>
-                <h4 class="sub-title p-t-15">Selected Row</h4>
+                <h4 class="sub-title p-t-15">Registro Selecionado</h4>
                 <ul>
-                    <li *ngFor='let sel of selected'>
+                    <li *ngFor='let sel of registroSelecionado'>
                         <span class="label label-primary">{{sel.descricao}}</span>
                     </li>
-                    <li *ngIf="!selected.length">No Selections</li>
+                    <li *ngIf="!registroSelecionado.length">No Selections</li>
                 </ul>
             </div>
-        </div>
+        </div> 
     </div>
 </div>
