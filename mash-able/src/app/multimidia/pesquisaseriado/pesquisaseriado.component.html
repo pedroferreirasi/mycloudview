@@ -1,69 +1,26 @@
-<div class="row">
+<!--<div class="row">
     <div class="col-sm-12">
         <nav class="navbar navbar-light bg-light">
             <div class="col-sm-10">
                 <a class="navbar-brand">
-                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">Novo</button>&nbsp;
-                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">Editar</button>&nbsp;
-                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-danger btn-round">Excluir</button>&nbsp;
+                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">
+                        <i class="icofont icofont-file-text"></i>
+                        Novo
+                    </button>&nbsp;
+                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">
+                        <i class="icofont icofont-edit"></i>
+                        Editar
+                    </button>&nbsp;
+                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-danger btn-round">
+                        <i class="icofont icofont-ui-delete"></i>
+                        Excluir
+                    </button>&nbsp;
                 </a>
-            </div>
-            <div class="col-sm-2">
-                <label class="label-control">
-                    Registro(s)
-                    <br />
-                    <select class="form-control input-sm full-data-show-entry" placeholder="Search name" (change)="alterarLimit($event)">
-                        <option [ngValue]="10">10</option>
-                        <option [ngValue]="25">25</option>
-                        <option [ngValue]="50">50</option>
-                        <option [ngValue]="100">100</option>
-                    </select>
-                </label>
             </div>
         </nav>
     </div>
 </div>
-<br/>
-<div class="row">
-    <div class="col-sm-12">
-        <app-card [title]="'Seriados'">
-            <div class="row">
-                <div class="col-sm-4">
-                    <input type="search" class="form-control input-sm" placeholder="Pesquisar" (keyup)='filtrar($event)'>
-                </div>
-            </div>
-            <br />
-            <ngx-datatable #table 
-                class="data-table" 
-                [rows]="dataSource" 
-                [columnMode]="'force'" 
-                [headerHeight]="50" 
-                [footerHeight]="50"
-                [rowHeight]="'auto'" 
-                [limit]="registrosPorPagina" 
-                [selected]="registroSelecionado" 
-                [selectionType]="'single'" 
-                (activate)="onActivate($event)"
-                (select)='onSelect($event)'>
-
-                <ngx-datatable-column name="Código" prop="id"></ngx-datatable-column>
-                <ngx-datatable-column name="Descrição" prop="descricao"></ngx-datatable-column>
-                <ngx-datatable-column name="IMDB" prop="imdbId"></ngx-datatable-column>
-                <ngx-datatable-column name="Ativo" prop="ativo"></ngx-datatable-column>
-
-            </ngx-datatable>
-        </app-card>
-
-        <div class="row">
-            <div class='col-sm-12 selected-column'>
-                <h4 class="sub-title p-t-15">Registro Selecionado</h4>
-                <ul>
-                    <li *ngFor='let sel of registroSelecionado'>
-                        <span class="label label-primary">{{sel.descricao}}</span>
-                    </li>
-                    <li *ngIf="!registroSelecionado.length">No Selections</li>
-                </ul>
-            </div>
-        </div> 
-    </div>
-</div>
+<br/>//-->
+<app-lista [propurl]="endereco"
+           [columns]="columns"
+           [titulo]="titulo"></app-lista>

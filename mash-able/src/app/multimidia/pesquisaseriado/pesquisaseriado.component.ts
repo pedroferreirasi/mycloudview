@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Http, Response } from '@angular/http';
 
-import { ListaGenerica } from '../../commom/framework/listagenerica';
 import { URL_SERIADO } from '../../commom/constante/constantes';
 
 @Component({
@@ -9,13 +7,21 @@ import { URL_SERIADO } from '../../commom/constante/constantes';
   templateUrl: './pesquisaseriado.component.html',
   styleUrls: ['./pesquisaseriado.component.css']
 })
-export class PesquisaSeriadoComponent extends ListaGenerica implements OnInit {
+export class PesquisaSeriadoComponent implements OnInit {
 
+  public endereco : String;
+  public titulo : string = "Seriado";
+  public columns: any[] = [
+    { name: "Código", prop: "id"},
+    { name: "Descrição", prop: "descricao"},
+    { name: "IMDB", prop: "imdbId"},
+    { name: "Ativo", prop: "ativo"}
+  ]
 
   constructor() {
-    super(URL_SERIADO);
+    this.endereco = URL_SERIADO;
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
 }

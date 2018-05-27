@@ -1,10 +1,33 @@
 <div class="row">
-  <div class="col-sm-12">
-      <app-card title='Cadastro de Seriado'>
-          <div class="row">
-              <button [routerLink]="['/multimidia/pesquisa-seriado']" class="btn btn-default btn-round">Cancelar</button>&nbsp;
-              <button class="btn btn-primary btn-round">Salvar</button>
-          </div>
-      </app-card>
-  </div>
+    <div class="col-sm-12">
+        <form>
+            <app-card title='Cadastro de Seriado'>
+                <div class="row" style="margin-bottom: 10px">
+                    <div class="col-sm-2">
+                        Código <br>
+                        <input type="text" class="form-control" readonly="true">
+                    </div>
+                    <div class="col-sm-10">
+                        Descrição <br>
+                        <input type="text" class="form-control" placeholder="Descrição">
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <ui-switch class="js-single" color="#1abc9c" switchColor="#fff" size="medium" style="margin-right: 15px" checked></ui-switch>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="margin-bottom: 10px">
+                        <button [routerLink]="['/multimidia/pesquisa-seriado']" class="btn btn-danger btn-round">
+                            <i class="icofont icofont-close-circled"></i>                                                    
+                            Cancelar
+                        </button>&nbsp;
+                        <button class="btn btn-primary btn-round">
+                            <i class="icofont icofont-check-circled"></i>
+                            Salvar
+                        </button>
+                    </div>
+                </div>                
+            </app-card>
+        </form>
+    </div>
 </div>
