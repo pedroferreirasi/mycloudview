@@ -1,20 +1,24 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { Http, Response } from '@angular/http';
+//import { Http, Response } from '@angular/http';
 import { DatatableComponent } from "@swimlane/ngx-datatable";
+import { ListaService } from './lista.service';
+import { Seriado } from '../../../model/multimidia/seriado.model';
 
 import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
-  styleUrls: ['./lista.component.css']
+  styleUrls: ['./lista.component.css'],
+  providers: [ListaService]
 })
 export class ListaComponent implements OnInit {
 
   protected registrosPorPagina: number = 10;
   protected dataSource = [];
   protected tempDataSource = [];
-  protected registroSelecionado = []; 
+  protected registroSelecionado = [];
+  public listaService : ListaService;
   @Input() public columns: any[] = [];
   @Input() public propurl : string;
   @Input() public titulo : String;
@@ -28,11 +32,22 @@ export class ListaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAll((data) => {
+    //this.entityService = new ListaService();
+    /*this.dataSource = this.entityService.getAll().then();
+    this.tempDataSource = this.dataSource;
+    this.registroSelecionado = this.dataSource[0];*/
+    let qualquer : string;
+    this.listaService.getAll2().then((teste : string) => {
+      qualquer = teste.toString();
+    });
+    console.log("era pra ser aqui");
+    console.log(qualquer);
+    
+    /*this.getAll((data) => {
       this.registroSelecionado = [data[0]];
       this.dataSource = data;
       this.tempDataSource = [...data];
-    });
+    });*/
    }
 
   getAll(cb) {
