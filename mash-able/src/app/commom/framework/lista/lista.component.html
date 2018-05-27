@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-sm-12">
+        <app-card [blockClass]="'front-icon-breadcrumb'">
+            <div class="row">
+                <div class="col-sm-8">
+                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">
+                        <i class="icofont icofont-file-text"></i>
+                        Novo
+                    </button>&nbsp;
+                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">
+                        <i class="icofont icofont-edit"></i>
+                        Editar
+                    </button>&nbsp;
+                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-danger btn-round">
+                        <i class="icofont icofont-ui-delete"></i>
+                        Excluir
+                    </button>&nbsp;                    
+                </div>
+                <div class="col-sm-4" >
+                    <div class="row justify-content-end" style="margin-right: 5px">
+                        <button [routerLink]="['/']" class="btn btn-primary btn-round">
+                            <i class="icofont icofont-exit"></i>
+                            Fechar
+                        </button>&nbsp;
+                    </div>
+                </div>
+            </div>  
+            <hr>        
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="search" class="form-control input-sm" placeholder="Pesquisar" (keyup)='filtrar($event)'>
+                        <span class="input-group-addon" id="basic-addon2">
+                            <i class="icofont icofont-ui-search"></i>
+                        </span>                        
+                    </div>                    
+                </div>
+                <div class="col-sm-8">
+                    <div class="row justify-content-end" style="margin-right: 5px">                      
+                        <select class="form-control col-sm-3 full-data-show-entry" placeholder="Search name" (change)="alterarLimit($event)">
+                            <option [ngValue]="10">10 Registro(s)</option>
+                            <option [ngValue]="25">25 Registro(s)</option>
+                            <option [ngValue]="50">50 Registro(s)</option>
+                            <option [ngValue]="100">100 Registro(s)</option>
+                        </select>                        
+                    </div>
+                </div>
+            </div>
+            <ngx-datatable #table class="data-table" 
+                [rows]="dataSource" 
+                [columnMode]="'force'" 
+                [headerHeight]="50" 
+                [footerHeight]="50"
+                [rowHeight]="'auto'" 
+                [limit]="registrosPorPagina" 
+                [selected]="registroSelecionado" 
+                [selectionType]="'single'"
+                [columns]="columns" 
+                (activate)="onActivate($event)" 
+                (select)='onSelect($event)'>
+
+            </ngx-datatable>
+        </app-card>
+
+        <!--<div class="row">
+            <div class='col-sm-12 selected-column'>
+                <h4 class="sub-title p-t-15">Registro Selecionado</h4>
+                <ul>
+                    <li *ngFor='let sel of registroSelecionado'>
+                        <span class="label label-primary">{{sel.descricao}}</span>
+                    </li>
+                    <li *ngIf="!registroSelecionado.length">No Selections</li>
+                </ul>
+            </div>
+        </div> //-->
+    </div>
+</div>
