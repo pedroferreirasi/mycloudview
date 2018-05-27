@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { DatatableComponent } from "@swimlane/ngx-datatable";
 
+import swal from 'sweetalert2';
+
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
@@ -90,4 +92,34 @@ export class ListaComponent implements OnInit {
     onSelect({ registroSelecionado }) { }
 
     onActivate(event) { }
+
+    openSuccessCancelSwal() {
+      swal({
+        title: 'Tem Certeza?',
+        text: "Você não poderá reverter isso!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim, Delete!',
+        cancelButtonText: 'Não, cancelar!',
+        confirmButtonClass: 'btn btn-success m-r-10',
+        cancelButtonClass: 'btn btn-danger',
+        buttonsStyling: false
+      }).then(function () {
+        swal(
+            'Deletado!',
+            'Registro deletado.',
+            'success'
+        )
+      }, function (dismiss) {
+        if (dismiss === 'cancel') {
+          swal(
+              'Cancelado',
+              'Ação cancelada com sucesso :)',
+              'error'
+          )
+        }
+      }).catch(swal.noop);
+    }
 }
