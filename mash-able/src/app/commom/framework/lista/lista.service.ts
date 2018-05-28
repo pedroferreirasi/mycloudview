@@ -1,21 +1,15 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-//import { Seriado } from '../../../model/multimidia/seriado.model';
-//import { ServiceGenericoService } from '../servicegenerico.service';
+
+import { Seriado } from '../../../model/multimidia/seriado.model';
+import { GenericoService } from '../generico.service';
+import { Http } from '@angular/http';
 
 @Injectable()
-export class ListaService  {
-    
-    public teste : string;
+export class ListaService extends GenericoService<Seriado>  {
 
-    constructor() {
-        this.teste = 'retornou certo';
-    }
 
-    getAll2() : Promise<String> {
-        return new Promise((resolve) => {
-            resolve ( this.teste )
-        });
-        
+    constructor(public http : Http) {
+        super(http);
     }
 
 }
