@@ -18,7 +18,7 @@ export class ListaComponent implements OnInit {
   protected dataSource = [];
   protected tempDataSource = [];
   protected registroSelecionado = [];
-  public listaService: ListaService
+  public listaService: ListaService<Seriado>;
   @Input() public columns: any[] = [];
   @Input() public propurl: string;
   @Input() public titulo: String;
@@ -27,7 +27,7 @@ export class ListaComponent implements OnInit {
 
   urlendereco: string;
 
-  constructor(listaService: ListaService) {
+  constructor(listaService: ListaService<Seriado>) {
     this.listaService = listaService;
 
     this.listaService.getAll().then((dados: Seriado[]) => {

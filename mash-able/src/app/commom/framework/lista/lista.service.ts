@@ -5,8 +5,7 @@ import { GenericoService } from '../generico.service';
 import { Http } from '@angular/http';
 
 @Injectable()
-export class ListaService extends GenericoService<Seriado>  {
-
+export class ListaService<T> extends GenericoService<T>  {
 
     constructor(public http : Http) {
         super(http);
