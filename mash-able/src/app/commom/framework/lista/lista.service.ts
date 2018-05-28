@@ -8,13 +8,11 @@ export class ListaService  {
     public teste : string;
 
     constructor() {
-        this.teste = "retornou certo";
+        this.teste = 'retornou certo';
     }
 
     getAll2() : Promise<String> {
         return new Promise((resolve) => {
-            console.log("passou aqui")
-            console.log(this.teste)
             resolve ( this.teste )
         });
         

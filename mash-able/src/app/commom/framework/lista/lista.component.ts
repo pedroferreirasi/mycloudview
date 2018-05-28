@@ -18,7 +18,7 @@ export class ListaComponent implements OnInit {
   protected dataSource = [];
   protected tempDataSource = [];
   protected registroSelecionado = [];
-  public listaService : ListaService;
+  public listaService : ListaService
   @Input() public columns: any[] = [];
   @Input() public propurl : string;
   @Input() public titulo : String;
@@ -27,21 +27,23 @@ export class ListaComponent implements OnInit {
 
    urlendereco : string;
 
-  constructor() {
-
+  constructor(listaService : ListaService) {
+     this.listaService = listaService;
+	 this.listaService.getAll2().then((teste : string) => {
+      this.qualquer = teste;	  
+    });
   }
+  public qualquer : string;
 
   ngOnInit() {
     //this.entityService = new ListaService();
     /*this.dataSource = this.entityService.getAll().then();
     this.tempDataSource = this.dataSource;
     this.registroSelecionado = this.dataSource[0];*/
-    let qualquer : string;
-    this.listaService.getAll2().then((teste : string) => {
-      qualquer = teste.toString();
-    });
+	
+
     console.log("era pra ser aqui");
-    console.log(qualquer);
+    console.log(this.qualquer);
     
     /*this.getAll((data) => {
       this.registroSelecionado = [data[0]];
