@@ -22,8 +22,6 @@ export class ListaComponent<T> implements OnInit {
 
   @ViewChild(DatatableComponent) table: DatatableComponent;
 
-  urlendereco: string;
-
   constructor() {
   }
 
