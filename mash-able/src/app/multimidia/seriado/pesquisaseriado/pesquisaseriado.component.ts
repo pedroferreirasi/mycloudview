@@ -15,7 +15,7 @@ export class PesquisaSeriadoComponent implements OnInit {
 
   @ViewChild(ListaComponent) listaGenerica: ListaComponent<Seriado>;
 
-  public listaService : SeriadoService;
+  public service : SeriadoService;
   public titulo : string = "Seriado";
   public columns: any[] = [
     { name: "Código", prop: "id"},
@@ -25,7 +25,7 @@ export class PesquisaSeriadoComponent implements OnInit {
   ]
 
   constructor(seriadoService : SeriadoService) {
-    this.listaService = seriadoService;
+    this.service = seriadoService;
   }
 
   ngOnInit() {}

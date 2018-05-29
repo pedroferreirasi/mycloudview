@@ -16,7 +16,7 @@ export class ListaComponent<T> implements OnInit {
   private tempDataSource = [];
   private registroSelecionado = [];
   
-  @Input() public listaService: any;
+  @Input() public service: any;
   @Input() public columns: any[] = [];
   @Input() public titulo: String;
 
@@ -26,7 +26,7 @@ export class ListaComponent<T> implements OnInit {
   }
 
   ngOnInit() {
-    this.listaService.getAll().then((dados: T[]) => {
+    this.service.getAll().then((dados: T[]) => {
       this.dataSource = dados;
       this.tempDataSource = dados;
       //this.registroSelecionado = dados[0];
