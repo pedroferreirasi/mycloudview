@@ -15,7 +15,6 @@ export class PesquisaSeriadoComponent implements OnInit {
 
   @ViewChild(ListaComponent) listaGenerica: ListaComponent<Seriado>;
 
-  public endereco : String;
   public listaService : PesquisaSeriadoService;
   public titulo : string = "Seriado";
   public columns: any[] = [
@@ -26,7 +25,6 @@ export class PesquisaSeriadoComponent implements OnInit {
   ]
 
   constructor(pesquisaSeriadoService : PesquisaSeriadoService) {
-    this.endereco = URL_SERIADO;
     this.listaService = pesquisaSeriadoService; 
   }
 

@@ -18,7 +18,6 @@ export class ListaComponent<T> implements OnInit {
   
   @Input() public listaService: any;
   @Input() public columns: any[] = [];
-  @Input() public propurl: string;
   @Input() public titulo: String;
 
   @ViewChild(DatatableComponent) table: DatatableComponent;
@@ -29,7 +28,7 @@ export class ListaComponent<T> implements OnInit {
   }
 
   ngOnInit() {
-        this.listaService.getAll().then((dados: T[]) => {
+    this.listaService.getAll().then((dados: T[]) => {
       this.dataSource = dados;
       this.tempDataSource = dados;
       //this.registroSelecionado = dados[0];
