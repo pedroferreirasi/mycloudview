@@ -1,24 +1,22 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 
 import { DatatableComponent } from "@swimlane/ngx-datatable";
-import { ListaService } from './lista.service';
-import { Seriado } from '../../../model/multimidia/seriado.model';
 
 import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
-  styleUrls: ['./lista.component.css'],
-  providers: [ListaService]
+  styleUrls: ['./lista.component.css']
 })
-export class ListaComponent implements OnInit {
+export class ListaComponent<T> implements OnInit {
 
-  protected registrosPorPagina: number = 10;
-  protected dataSource = [];
-  protected tempDataSource = [];
-  protected registroSelecionado = [];
-  public listaService: ListaService<Seriado>;
+  private registrosPorPagina: number = 10;
+  private dataSource = [];
+  private tempDataSource = [];
+  private registroSelecionado = [];
+  
+  @Input() public listaService: any;
   @Input() public columns: any[] = [];
   @Input() public propurl: string;
   @Input() public titulo: String;
@@ -27,17 +25,16 @@ export class ListaComponent implements OnInit {
 
   urlendereco: string;
 
-  constructor(listaService: ListaService<Seriado>) {
-    this.listaService = listaService;
+  constructor() {
+  }
 
-    this.listaService.getAll().then((dados: Seriado[]) => {
+  ngOnInit() {
+        this.listaService.getAll().then((dados: T[]) => {
       this.dataSource = dados;
       this.tempDataSource = dados;
       //this.registroSelecionado = dados[0];
-    })
-  }
-
-  ngOnInit() { }
+    });
+   }
 
   alterarLimit(evento: KeyboardEvent) {
     this.registrosPorPagina = parseInt((<HTMLInputElement>evento.target).value);

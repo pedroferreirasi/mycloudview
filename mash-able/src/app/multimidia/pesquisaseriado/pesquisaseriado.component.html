@@ -21,6 +21,8 @@
     </div>
 </div>
 <br/>//-->
-<app-lista [propurl]="endereco"
+<app-lista #listaGenerica
+           [listaService]="listaService"
+           [propurl]="endereco"
            [columns]="columns"
            [titulo]="titulo"></app-lista>
