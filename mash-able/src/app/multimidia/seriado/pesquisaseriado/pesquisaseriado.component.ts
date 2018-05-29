@@ -1,21 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { ListaComponent } from '../../commom/framework/lista/lista.component';
-import { URL_SERIADO } from '../../commom/constante/constantes';
-import { Seriado } from '../../model/multimidia/seriado.model';
-import { PesquisaSeriadoService } from './pesquisaseriado.service';
+import { ListaComponent } from '../../../commom/framework/lista/lista.component';
+import { URL_SERIADO } from '../../../commom/constante/constantes';
+import { Seriado } from '../../../model/multimidia/seriado.model';
+import { SeriadoService } from '../seriado.service';
 
 @Component({
   selector: 'pesquisa-seriado',
   templateUrl: './pesquisaseriado.component.html',
   styleUrls: ['./pesquisaseriado.component.css'],
-  providers: [PesquisaSeriadoService]
+  providers: [SeriadoService]
 })
 export class PesquisaSeriadoComponent implements OnInit {
 
   @ViewChild(ListaComponent) listaGenerica: ListaComponent<Seriado>;
 
-  public listaService : PesquisaSeriadoService;
+  public listaService : SeriadoService;
   public titulo : string = "Seriado";
   public columns: any[] = [
     { name: "Código", prop: "id"},
@@ -24,8 +24,8 @@ export class PesquisaSeriadoComponent implements OnInit {
     { name: "Ativo", prop: "ativo"}
   ]
 
-  constructor(pesquisaSeriadoService : PesquisaSeriadoService) {
-    this.listaService = pesquisaSeriadoService; 
+  constructor(seriadoService : SeriadoService) {
+    this.listaService = seriadoService;
   }
 
   ngOnInit() {}

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
-import { PesquisaSeriadoComponent } from './pesquisaseriado/pesquisaseriado.component';
+import { PesquisaSeriadoComponent } from './seriado/pesquisaseriado/pesquisaseriado.component';
 import { TorrentComponent } from './torrent/torrent.component';
-import { CadastroSeriadoComponent } from './cadastroseriado/cadastroseriado.component';
+import { CadastroSeriadoComponent } from './seriado/cadastroseriado/cadastroseriado.component';
 
 export const MULTIMIDIA_ROUTES : Routes = [{
     path: '',

@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 import { Seriado } from '../../model/multimidia/seriado.model';
 
 @Injectable()
-export class PesquisaSeriadoService extends GenericoService<Seriado>  {
+export class SeriadoService extends GenericoService<Seriado>  {
 
     constructor(public http : Http) {
         super(http);

@@ -1,31 +1,7 @@
 <div class="row">
     <div class="col-sm-12">
         <app-card [blockClass]="'front-icon-breadcrumb'">
-            <div class="row">
-                <div class="col-sm-8">
-                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">
-                        <i class="icofont icofont-file-text"></i>
-                        Novo
-                    </button>&nbsp;
-                    <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">
-                        <i class="icofont icofont-edit"></i>
-                        Editar
-                    </button>&nbsp;
-                    <button class="btn btn-danger btn-round"
-                            (click)="openSuccessCancelSwal()">
-                        <i class="icofont icofont-ui-delete"></i>
-                        Excluir
-                    </button>&nbsp;                    
-                </div>
-                <div class="col-sm-4" >
-                    <div class="row justify-content-end" style="margin-right: 5px">
-                        <button [routerLink]="['/']" class="btn btn-primary btn-round">
-                            <i class="icofont icofont-exit"></i>
-                            Fechar
-                        </button>&nbsp;
-                    </div>
-                </div>
-            </div>  
+            <ng-content></ng-content>  
             <hr>        
             <div class="row">
                 <div class="col-sm-4">
