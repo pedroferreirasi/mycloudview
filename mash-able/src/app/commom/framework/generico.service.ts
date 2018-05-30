@@ -7,7 +7,8 @@ export class GenericoService<T> {
     
     public http : Http;
     //public urldominio : string = "http://pedroferreirasi.servehttp.com:8080/seriado/";
-    public urldominio : string = "http://192.168.25.9:8080/seriado/";
+    public urldominio : string = "http://192.168.25.9:8080/";
+    public funcionalidade : string = "";
 
     constructor(http : Http) {
         this.http = http;
@@ -17,7 +18,7 @@ export class GenericoService<T> {
     }
 
     public getAll() : Promise<T[]> {
-        return this.http.get(this.urldominio).toPromise().then(res => res.json());       
+        return this.http.get(this.urldominio + this.funcionalidade).toPromise().then(res => res.json());       
     }
 
 }

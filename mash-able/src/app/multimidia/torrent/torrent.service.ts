@@ -2,14 +2,14 @@ import { Component, OnInit, Injectable } from '@angular/core';
 
 import { GenericoService } from '../../commom/framework/generico.service';
 import { Http } from '@angular/http';
-import { Seriado } from '../../model/multimidia/seriado.model';
+import { Torrent } from '../../model/multimidia/torrent.model';
 
 @Injectable()
-export class SeriadoService extends GenericoService<Seriado>  {
+export class TorrentService extends GenericoService<Torrent>  {
 
     constructor(public http : Http) {
         super(http);
-        this.funcionalidade = "seriado/";
+        this.funcionalidade = "torrent/";
     }
 
 }
