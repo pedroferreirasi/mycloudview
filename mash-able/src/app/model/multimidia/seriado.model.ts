@@ -5,4 +5,9 @@ export class Seriado {
     public descricao : String;
     public ativo : boolean;
     public imdbId : String;
+    public teste : string;
+
+    constructor() {
+        this.teste = "teste";
+    }
 }
