@@ -2,12 +2,17 @@ import { Routes } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const AppRoutes: Routes = [
 {
   path: '',
   component: AdminLayoutComponent,
   children: [
+    {
+      path: '',
+      component: DashboardComponent
+    },
     {
       path: 'simple-page',
       loadChildren: './simple-page/simple-page.module#SimplePageModule'
