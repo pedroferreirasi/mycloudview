@@ -21,4 +21,8 @@ export class GenericoService<T> {
         return this.http.get(this.urldominio + this.funcionalidade).toPromise().then(res => res.json());       
     }
 
+    public getGenrico(caminho : String) : Promise<T[]> {
+        return this.http.get(this.urldominio + caminho).toPromise().then(res => res.json());       
+    }
+
 }

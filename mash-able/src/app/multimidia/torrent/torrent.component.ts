@@ -25,16 +25,22 @@ export class TorrentComponent implements OnInit {
 
   ngOnInit() {
      this.columns = [
-		{ name: "Seriado", prop: "seriado.descricao"},
-		{ name: "IMDB", prop: "imdbId"},
+		{ name: "Seriado", prop: "seriado.descricao"},		
 		{ name: "Temporada", prop: "temporada"},
-		{ name: "Episódio", prop: "episodio"},
-		{ name: "MB", prop: "sizeMega"},
+    { name: "Episódio", prop: "episodio"},
+    { name: "IMDB", prop: "imdbId"},
+		{ name: "MB", prop: "sizeMega"}/*,
 		{
 		  cellTemplate: this.editTmpl,
 		  headerTemplate: this.hdrTpl,
 		  name: 'Download'
-		}		
+		}	*/	
 	 ]
+  }
+
+  public sincronizar() {
+    this.service.sincronizar().then((resolve) => {
+      alert('rodou ok');
+    });    
   }
 }

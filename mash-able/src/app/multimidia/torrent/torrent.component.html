@@ -1,16 +1,33 @@
 <div>
-    <app-lista #listaGenerica 
-               [service]="service" 
-               [columns]="columns" 
-               [titulo]="titulo">
+    <app-lista #listaGenerica [service]="service" [columns]="columns" [titulo]="titulo">
+      <div class="row">
+        <div class="col-sm-8" style="margin-bottom: 20px">
+            <button class="btn btn-primary btn-round" (click)="sincronizar()">
+                <i class="icofont icofont-file-text"></i>
+                Sincronizar
+            </button>&nbsp;
+            <button [routerLink]="['/multimidia/cadastro-seriado']" class="btn btn-primary btn-round">
+                <i class="icofont icofont-download-alt"></i>
+                Download
+            </button>&nbsp;
+        </div>
+        <div class="col-sm-4">
+            <div class="row justify-content-end" style="margin-right: 5px">
+                <button [routerLink]="['/']" class="btn btn-primary btn-round">
+                    <i class="icofont icofont-exit"></i>
+                    Fechar
+                </button>&nbsp;
+            </div>
+        </div> 
+      </div>       
     </app-lista>
 
-    <!-- COLUNA ADICIONAL PARA DOWNLOAD-->
+    <!-- COLUNA ADICIONAL PARA DOWNLOAD
     <ng-template #hdrTpl let-column="column">
         {{column.name}}
     </ng-template>
 
     <ng-template #editTmpl let-row="row" let-value="value">
         <input type="button" value="download" />
-    </ng-template>
+    </ng-template>-->
 </div>
