@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { BreadcrumbsComponent } from './layouts/admin/breadcrumbs/breadcrumbs.component';
 import { TitleComponent } from './layouts/admin/title/title.component';
 import {LocationStrategy, PathLocationStrategy} from '@angular/common';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {LocationStrategy, PathLocationStrategy} from '@angular/common';
     AdminLayoutComponent,
     AuthLayoutComponent,
     BreadcrumbsComponent,
-    TitleComponent
+    TitleComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
