@@ -17,22 +17,24 @@ export class TorrentComponent implements OnInit {
 
   public service : TorrentService;
   public titulo : string = "Torrent";
-  public columns: any[] = [
-    {
-      cellTemplate: this.editTmpl,
-      headerTemplate: this.hdrTpl,
-      name: 'Download'
-    },
-    { name: "Seriado", prop: "seriado.descricao"},
-    { name: "IMDB", prop: "imdbId"},
-    { name: "Temporada", prop: "temporada"},
-    { name: "Episódio", prop: "episodio"},
-    { name: "MB", prop: "sizeMega"}
-  ]
+  public columns: any[];
 
   constructor(torrentService : TorrentService) {
     this.service = torrentService;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+     this.columns = [
+		{ name: "Seriado", prop: "seriado.descricao"},
+		{ name: "IMDB", prop: "imdbId"},
+		{ name: "Temporada", prop: "temporada"},
+		{ name: "Episódio", prop: "episodio"},
+		{ name: "MB", prop: "sizeMega"},
+		{
+		  cellTemplate: this.editTmpl,
+		  headerTemplate: this.hdrTpl,
+		  name: 'Download'
+		}		
+	 ]
+  }
 }
