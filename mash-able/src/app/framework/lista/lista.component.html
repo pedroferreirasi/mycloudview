@@ -32,27 +32,9 @@
                 [selected]="registroSelecionado" 
                 [selectionType]="'single'"
                 [columns]="columns" 
+                [columnMode]="'force'"
                 (activate)="onActivate($event)" 
                 (select)='onSelect($event)'>
-                <!--<ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
-                <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
-                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" >
-                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
-                      <label>
-                        Coluna
-                      </label>
-                    </div>
-            
-                  </ng-template>
-                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected" let-onCheckboxChangeFn="onCheckboxChangeFn">
-                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" >
-                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
-                      <label>
-                        teste
-                      </label>
-                    </div>
-                  </ng-template>
-                </ngx-datatable-column>-->
             </ngx-datatable>
         </app-card>
 

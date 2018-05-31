@@ -1,4 +1,16 @@
-<app-lista #listaGenerica 
-           [service]="service" 
-           [columns]="columns" 
-           [titulo]="titulo"></app-lista>
+<div>
+    <app-lista #listaGenerica 
+               [service]="service" 
+               [columns]="columns" 
+               [titulo]="titulo">
+    </app-lista>
+
+    <!-- COLUNA ADICIONAL PARA DOWNLOAD-->
+    <ng-template #hdrTpl let-column="column">
+        123 {{column.name}} !!
+    </ng-template>
+
+    <ng-template #editTmpl let-row="row" let-value="value">
+        <input type="button" value="download" />teste
+    </ng-template>
+</div>

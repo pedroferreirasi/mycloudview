@@ -1,3 +1,26 @@
+/*
+ * Atributos que podem ser utilizados para coluna dinamica:
+  @Input() name: string;
+  @Input() prop: TableColumnProp;
+  @Input() frozenLeft: any;
+  @Input() frozenRight: any;
+  @Input() flexGrow: number;
+  @Input() resizeable: boolean;
+  @Input() comparator: any;
+  @Input() pipe: any;
+  @Input() sortable: boolean;
+  @Input() draggable: boolean;
+  @Input() canAutoResize: boolean;
+  @Input() minWidth: number;
+  @Input() width: number;
+  @Input() maxWidth: number;
+  @Input() checkboxable: boolean;
+  @Input() headerCheckboxable: boolean;
+  @Input() headerClass: string | ((data: any) => string|any);
+  @Input() cellClass: string | ((data: any) => string|any);
+  @Input() summaryFunc: (cells: any[]) => any;
+  @Input() summaryTemplate: TemplateRef<any>;
+ */
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 
 import { DatatableComponent } from "@swimlane/ngx-datatable";

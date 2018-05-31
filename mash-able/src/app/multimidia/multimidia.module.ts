@@ -7,15 +7,17 @@ import { SharedModule } from "../shared/shared.module";
 import { TorrentComponent } from './torrent/torrent.component';
 import { PesquisaSeriadoComponent } from './seriado/pesquisaseriado/pesquisaseriado.component';
 import { CadastroSeriadoComponent } from './seriado/cadastroseriado/cadastroseriado.component';
-import { ListaComponent } from '../commom/framework/lista/lista.component';
+
+import { FrameworkModule } from '../framework/framework.module';
 
 @NgModule({
     imports: [
       CommonModule,
       RouterModule.forChild(MULTIMIDIA_ROUTES),
-      SharedModule
+      SharedModule,
+      FrameworkModule
     ],
-    declarations: [TorrentComponent, PesquisaSeriadoComponent, CadastroSeriadoComponent, ListaComponent]
+    declarations: [TorrentComponent, PesquisaSeriadoComponent, CadastroSeriadoComponent]
   })
 export class MultimidiaModule {
 
