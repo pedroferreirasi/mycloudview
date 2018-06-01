@@ -20,7 +20,8 @@ export class PesquisaSeriadoComponent implements OnInit {
     { name: "Código", prop: "id", width: 120, sortable: true, resizeable: false, draggable: false, canAutoResize: false},
     { name: "Descrição", prop: "descricao"},
     { name: "IMDB", prop: "imdbId"},
-    { name: "Ativo", prop: "ativo"}
+    { name: "Ativo", prop: "ativo"},
+    { name: "Atualizado", prop: "dtUltimaAtualizacao"}
   ]
 
   constructor(seriadoService : SeriadoService) {

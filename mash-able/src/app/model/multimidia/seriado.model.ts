@@ -5,6 +5,7 @@ export class Seriado {
     public descricao : String;
     public ativo : boolean;
     public imdbId : String;
+    public dtUltimaAtualizacao : Date;
 
     constructor() {
 

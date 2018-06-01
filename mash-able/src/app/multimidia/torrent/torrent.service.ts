@@ -16,4 +16,8 @@ export class TorrentService extends GenericoService<Torrent>  {
         return this.getGenrico("torrent/API/download/");
     }
 
+    public sincronizarTodos() : Promise<Torrent[]> {
+        return this.getGenrico("torrent/API/download/");
+    }
+
 }

@@ -6,8 +6,8 @@ import { Http } from '@angular/http'
 export class GenericoService<T> {
     
     public http : Http;
-    public urldominio : string = "http://pedroferreirasi.servehttp.com:8080/";
-    //public urldominio : string = "http://192.168.25.9:8080/";
+    //public urldominio : string = "http://pedroferreirasi.servehttp.com:8080/";
+    public urldominio : string = "http://192.168.25.9:8080/";
     public funcionalidade : string = "";
 
     constructor(http : Http) {
