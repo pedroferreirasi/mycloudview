@@ -21,7 +21,7 @@
   @Input() summaryFunc: (cells: any[]) => any;
   @Input() summaryTemplate: TemplateRef<any>;
  */
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 
 import { DatatableComponent } from "@swimlane/ngx-datatable";
 
@@ -36,12 +36,15 @@ export class ListaComponent<T> implements OnInit {
 
   private registrosPorPagina: number = 10;
   private dataSource = [];
-  private tempDataSource = [];
-  private registroSelecionado = [];
+  private tempDataSource = [];  
+  public registroSelecionado = [];
+
+  @Output() registroChange: EventEmitter<any[]> = new EventEmitter<any[]>();
   
   @Input() public service: any;
   @Input() public columns: any[] = [];
   @Input() public titulo: String;
+  @Input() public selectionType : string;
 
   @ViewChild(DatatableComponent) table: DatatableComponent;
 
@@ -95,41 +98,15 @@ export class ListaComponent<T> implements OnInit {
       this.dataSource = [];
     }
 
-    // whenever the filter changes, always go back to the first page
+    // Sempre vai para a primeira pagina
     this.table.offset = 0;
   }
 
-  onSelect({ registroSelecionado }) { }
+  onSelect({ registroSelecionado }) {
+    this.registroChange.emit(this.registroSelecionado);
+   }
 
   onActivate(event) { }
 
-  openSuccessCancelSwal() {
-    swal({
-      title: 'Tem Certeza?',
-      text: "Você não poderá reverter isso!",
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sim, Delete!',
-      cancelButtonText: 'Não, cancelar!',
-      confirmButtonClass: 'btn btn-success m-r-10',
-      cancelButtonClass: 'btn btn-danger',
-      buttonsStyling: false
-    }).then(function () {
-      swal(
-        'Deletado!',
-        'Registro deletado.',
-        'success'
-      )
-    }, function (dismiss) {
-      if (dismiss === 'cancel') {
-        swal(
-          'Cancelado',
-          'Ação cancelada com sucesso :)',
-          'error'
-        )
-      }
-    }).catch(swal.noop);
-  }
+  
 }

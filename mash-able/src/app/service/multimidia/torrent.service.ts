@@ -1,7 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 
 import { GenericoService } from '../../framework/servico/generico.service';
-import { Http } from '@angular/http';
 import { Torrent } from '../../model/multimidia/torrent.model';
 
 @Injectable()
@@ -12,8 +12,10 @@ export class TorrentService extends GenericoService<Torrent>  {
         this.funcionalidade = "torrent/";
     }
 
-    public sincronizar() : Promise<Torrent[]> {
-        return this.getGenrico("torrent/API/download/");
+    public sincronizar(lista : Torrent[]) {
+        lista.forEach((entity) => {
+            this.getGenrico("torrent/API/download/" + entity.id.toString());
+        }) 
     }
 
     public sincronizarTodos() : Promise<Torrent[]> {
