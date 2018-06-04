@@ -12,10 +12,8 @@ export class TorrentService extends GenericoService<Torrent>  {
         this.funcionalidade = "torrent/";
     }
 
-    public sincronizar(lista : Torrent[]) {
-        lista.forEach((entity) => {
-            this.getGenrico("torrent/API/download/" + entity.id.toString());
-        }) 
+    public sincronizar(id : String) : Promise<any[]> {
+        return this.getGenrico("torrent/API/download/" + id);        
     }
 
     public sincronizarTodos() : Promise<Torrent[]> {
