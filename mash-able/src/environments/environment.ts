@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  enderecoURL: 'http://pedroferreirasi.servehttp.com:8080/'  
+  //enderecoURL: 'http://192.168.25.9:8080/'  
+  enderecoURL: 'http://localhost:8080/'  
 };

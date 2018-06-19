@@ -15,7 +15,10 @@ export class GenericoService<T> {
         this.http = http;
     }
 
-    public save() {
+    public save(entity : T) {
+        console.log(this.urldominio + this.funcionalidade);
+        console.log(entity);
+        this.http.post(this.urldominio + this.funcionalidade, entity);
     }
 
     public getAll() : Promise<T[]> {

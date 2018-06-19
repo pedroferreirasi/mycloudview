@@ -14,6 +14,7 @@ import { BreadcrumbsComponent } from './layouts/admin/breadcrumbs/breadcrumbs.co
 import { TitleComponent } from './layouts/admin/title/title.component';
 import {LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { Seriado } from './model/multimidia/seriado.model';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   exports: [],
   providers: [
-      { provide: LocationStrategy, useClass: PathLocationStrategy }
+      { provide: LocationStrategy, useClass: PathLocationStrategy }, Seriado
   ],
   bootstrap: [AppComponent]
 })
